@@ -23,7 +23,7 @@ Node.prototype    = {
     }
   },
   removeName: function(name){
-    for (let i = 0, len = child.children.length; i < len; i++) {
+    for (let i = 0, len = this.children.length; i < len; i++) {
       let ch = this.getChild(i);
       console.log(ch.name);
       ch.removeName(name);
