@@ -21,6 +21,13 @@ Node.prototype    = {
         this.children.splice(i,1);
       }
     }
+  },
+  removeName: function(name){
+    for (let i = 0, len = child.children.length; i < len; i++) {
+      let ch = this.getChild(i);
+      console.log(ch.name);
+      ch.removeName(name);
+    }
   }
 }
 
@@ -54,9 +61,8 @@ function traverse(indent, child){
     traverse(indent, child.getChild(i))
   }
 }
-
+let tree = new Node("root");
 function run() {
-  let tree = new Node("root");
   let left = new Node("left");
   let right = new Node("right");
   let leftLeft = new Node("leftLeft");
@@ -73,3 +79,4 @@ function run() {
 }
 
 run();
+tree.removeName("left");
