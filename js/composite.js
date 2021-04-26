@@ -26,7 +26,13 @@ Node.prototype    = {
     for (let i = 0, len = this.children.length; i < len; i++) {
       let ch = this.getChild(i);
       console.log(ch.name);
-      ch.removeName(name);
+      if (ch.name == name){
+        this.remove(ch);
+        return 1;
+      } else {
+        ch.removeName(name);
+      }
+      return 0;
     }
   }
 }
